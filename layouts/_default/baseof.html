@@ -49,12 +49,17 @@
     {{ block "body" . }}
     <div class="container">
       <div class="row">
-        {{ partial "sidebar.html" . }}
+        <div class="d-none d-md-inline-block col-md-3">
+          {{ partial "sidebar.html" . }}
+        </div>
         <div class="col-md-8 ml-auto blog-main">
           {{ block "main" . }}
           <!-- The part of the page that begins to differ between templates -->
           {{ end }}
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+        <div class="d-md-none col-sm-12 m-auto">
+          {{ partial "sidebar.html" . }}
+        </div>
       </div> {{ "<!-- /.row -->" | safeHTML }}
     </div> {{ "<!-- /.container -->" | safeHTML }}
     {{ end }}
