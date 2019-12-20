@@ -2,8 +2,8 @@
 
 <div class="card mb-3">
   <article>
-    {{ if (.Params.img) }}
-      <img class="card-img-top" src="{{ .Params.img }}" alt="{{ .Params.caption }}">
+    {{ if (.Params.images) }}
+      <img class="card-img-top" src="{{ index .Params.images 0 }}" alt="{{ .Params.caption }}">
     {{ end }}
     <header class="card-body">
       <h2 class="card-title" dir="auto"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
