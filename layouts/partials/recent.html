@@ -1,9 +1,13 @@
-  <section class="sidebar-module">
-    <h4>{{ i18n "recentPosts" }}</h4>
-    <ol class="list-unstyled">
-{{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
-{{ range first $num_recent_posts (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
-<li><a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
-{{ end }}
-    </ol>
-  </section>
+<section class="mt-3">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">{{ i18n "recentPosts" }}</h4>
+    </div>
+    <div class="list-group list-group-flush">
+      {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
+      {{ range first $num_recent_posts (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
+        <a class="list-group-item" href="{{.RelPermalink}}">{{.Title | markdownify }}</a>
+      {{ end }}
+    </div>
+  </div>    
+</section>
