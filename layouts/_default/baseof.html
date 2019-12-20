@@ -36,21 +36,6 @@
 
   <body>
 
-    {{ block "masthead" . }}
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="nav blog-nav">
-          <a class="nav-link {{ if .IsHome }}active{{ end }}" href="{{ .Site.BaseURL | absLangURL }}">{{ i18n "home" }}</a>
-          {{- $currentPage := . -}}
-          {{ range .Site.Menus.navbar }}
-          {{ $menuURL := .URL | absLangURL }}
-          <a class="nav-link{{ if or ($currentPage.IsMenuCurrent "navbar" .) ($currentPage.HasMenuCurrent "navbar" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-          {{ end }}
-        </nav>
-      </div>
-    </div>
-    {{ end }}
-
     {{ block "header" . }}
     {{ if (ne .Site.Params.header_visible false) }}
     <header class="blog-header">
@@ -65,35 +50,15 @@
     {{ block "body" . }}
     <div class="container">
       <div class="row">
-        <div class="col-sm-8 blog-main">
-
+        {{ partial "sidebar.html" . }}
+        <div class="col-md-8 ml-auto blog-main">
           {{ block "main" . }}
           <!-- The part of the page that begins to differ between templates -->
           {{ end }}
-
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
-
-        {{ partial "sidebar.html" . }}
-
       </div> {{ "<!-- /.row -->" | safeHTML }}
     </div> {{ "<!-- /.container -->" | safeHTML }}
     {{ end }}
-
-    {{ block "footer" . }}
-    <footer class="blog-footer">
-      <p dir="auto">
-      {{ if .Site.Copyright }}
-      {{ .Site.Copyright | markdownify }}
-      {{ else }}
-      Blog template created by <a href="https://twitter.com/mdo">@mdo</a>, ported to Hugo by <a href='https://twitter.com/mralanorth'>@mralanorth</a>.
-      {{ end }}
-      </p>
-      <p>
-      <a href="#">{{ i18n "backToTop" }}</a>
-      </p>
-    </footer>
-    {{ end }}
-
   </body>
 
 </html>

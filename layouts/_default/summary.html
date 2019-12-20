@@ -18,11 +18,16 @@
         {{ partial "meta-terms.html" . }}
         {{ end }}
       </p>
-        <p class="card-text">
-          {{ .Summary }}
-        </p>
-        <a class="card-link" href='{{ .Permalink }}'>{{ i18n "readMore" }}</a>
+      <p class="card-text">
+        {{ .Summary }}
+      </p>
     </header>
+    
+    <a href='{{ .Permalink }}'>
+      <div class="card-footer">
+      {{ i18n "readMore" }}
+      </div>
+    </a>
   </article> <!-- /.blog-post -->
 </div>
 
