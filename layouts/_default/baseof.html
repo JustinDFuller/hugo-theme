@@ -38,10 +38,9 @@
 
     {{ block "header" . }}
     {{ if (ne .Site.Params.header_visible false) }}
-    <header class="blog-header">
+    <header class="pt-3 pb-2 blog-header">
       <div class="container">
-        <h1 class="blog-title" dir="auto"><a href="{{ .Site.BaseURL | absURL }}" rel="home">{{ .Site.Title | safeHTML }}</a></h1>
-        {{ if .Site.Params.description }}<p class="lead blog-description" dir="auto">{{ .Site.Params.description | markdownify }}</p>{{ end }}
+        <h1 dir="auto"><a href="{{ .Site.BaseURL | absURL }}" rel="home">{{ .Site.Title | safeHTML }}</a></h1>
       </div>
     </header>
     {{ end }}
