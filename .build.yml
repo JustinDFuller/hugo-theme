@@ -3,7 +3,7 @@ packages:
   - nodejs-lts-dubnium
   - npm
 sources:
-  - https://git.sr.ht/~alanorth/hugo-theme-bootstrap4-blog
+  - https://github.com/justindfuller/hugo-theme
 tasks:
   - setup: |
       id
