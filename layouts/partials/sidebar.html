@@ -1,9 +1,10 @@
 <aside class="blog-sidebar">
   {{ if and (.Site.Params.sidebar) (isset .Site.Params.sidebar "about") }}
-  <section class="card sidebar-module-inset">
+  <section class="card">
+    <img src="/profile.jpg" class="card-img-top" />
     <div class="card-body">
-      <h4>{{ i18n "about" }}</h4>
-      <p dir="auto">{{ .Site.Params.sidebar.about | markdownify }}</p>
+      <h5 class="card-title">{{ i18n "about" }}</h5>
+      <p class="card-text" dir="auto">{{ .Site.Params.sidebar.about | markdownify }}</p>
     </div>    
   </section>
   {{ end }}
