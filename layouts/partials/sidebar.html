@@ -23,6 +23,12 @@
     </ol>
   </section>
   {{ end }}
+
+  {{ if .Site.Params.email_subscribe}}
+    <a href="{{.Site.Params.email_subscribe}}" target="_blank">
+      <button type="button" class="btn btn-primary">Subscribe to newsletter</button>
+    </a>
+  {{ end }}
 </aside><!-- /.blog-sidebar -->
 
 {{- /* vim: set ts=2 sw=2 et: */}}

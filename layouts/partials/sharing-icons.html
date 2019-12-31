@@ -1,10 +1,20 @@
   <section>
-    <h4>{{ i18n "share" }}</h4>
-    <nav class="nav sharing-icons">
-      <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" title="Share on Facebook"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
-      <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}" title="Share on LinkedIn"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
-      <a class="nav-item" href="https://twitter.com/intent/tweet?url={{ .Permalink }}&amp;text={{ .Title }}" title="Tweet this"><span class="fa fa-twitter fa-2x"></span></a>
-    </nav>
+    <div class="d-inline-block">
+      <h4>{{ i18n "share" }}</h4>
+      <nav class="nav sharing-icons">
+        <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" title="Share on Facebook"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+        <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}" title="Share on LinkedIn"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+        <a class="nav-item" href="https://twitter.com/intent/tweet?url={{ .Permalink }}&amp;text={{ .Title }}" title="Tweet this"><span class="fa fa-twitter fa-2x"></span></a>
+      </nav>
+    </div>  
+
+    {{ if .Site.Params.email_subscribe}}
+      <div class="d-inline-block float-right" style="margin-top:35px;">
+        <a href="{{.Site.Params.email_subscribe}}" target="_blank">
+          <button type="button" class="btn btn-primary">Subscribe to newsletter</button>
+        </a>
+      </div>    
+    {{ end }}
   </section>
 
 {{- /* vim: set ts=2 sw=2 et: */}}
