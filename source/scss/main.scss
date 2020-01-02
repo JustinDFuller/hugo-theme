@@ -196,6 +196,8 @@ article div.highlight {
 pre {
   padding: 1em;
   overflow-wrap: normal;
+  word-wrap: break-word;
+  overflow: auto;
 }
 
 a:not(.nav-item) {
