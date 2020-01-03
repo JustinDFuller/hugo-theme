@@ -200,11 +200,20 @@ pre {
   overflow: auto;
 }
 
-a:not(.nav-item) {
-  border-bottom: 1px #0d3f67 dotted;
+a {
+  &:not(.nav-item):not(.list-group-item) {
+    border-bottom: 1px #0d3f67 dotted;
 
-  &:hover, &:focus {
-    border-bottom: none;
-    text-decoration: underline;
+    &:hover, &:focus {
+      border-bottom: none;
+      text-decoration: underline;
+    }
   }
 }
+
+h1, h2, h3, h4, h5, h6 {
+  a {
+    border-bottom: none !important;
+  }
+}
+
