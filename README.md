@@ -1,8 +1,8 @@
-# Hugo Bootstrap v4 Blog 
+# hugo theme
+
+This is the theme for my [hugo blog](https://github.com/JustinDFuller/blog). See [justindfuller.com](https://justindfuller.com) for an example of this theme in use.
 
 ![Screenshot](https://image.thum.io/get/maxAge/12/width/700/https://justindfuller.com "Screenshot")
-
-See [justindfuller.com](https://justindfuller.com) for an example of this theme in use.
 
 ## Usage
 Clone the repository to your site's `themes` directory. Refer to [`exampleSite/config.toml`](https://github.com/alanorth/hugo-theme-bootstrap4-blog/blob/master/exampleSite/config.toml) for recommended configuration values.
